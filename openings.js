@@ -32,6 +32,21 @@ Promise.all([
     let viewButton = document.querySelector(".view-button");
     let lichessLink = document.querySelector(".lichess-link");
     let filterText = document.querySelector(".filter");
+    let toastContainer = document.querySelector(".toast-container");
+    
+    const showToast = content => {
+        let toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = content;
+        toastContainer.appendChild(toast);
+        toast.classList.add("show");
+        setTimeout(function() {
+            toast.classList.remove("show");
+            setTimeout(function() {
+                toastContainer.removeChild(toast);
+            }, 500);
+        }, 3000);
+    };
     
     bigTsv.forEach(cols => {
         let tr = document.createElement("tr");
@@ -82,11 +97,14 @@ Promise.all([
         openings.querySelectorAll("tr").forEach(tr =>
             tr !== parentTr && tr.classList.remove("focused"));
         let isFocused = parentTr.classList.toggle("focused");
-        viewButton.disabled = !isFocused;
+        viewButton.classList.toggle("disabled", !isFocused);
     });
-    viewButton.disabled = true; // reset any potentially saved state
     
     viewButton.addEventListener("click", () => {
+        if(viewButton.classList.contains("disabled")) {
+            showToast("Please select a row to view the board");
+            return;
+        }
         let pgn = document.querySelector(".focused code");
         if(!pgn) {
             console.warn("No pgn found when clicking view button");
