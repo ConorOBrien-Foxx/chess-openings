@@ -128,7 +128,12 @@ Promise.all([
         let idx = 0;
         for(let tr of openings.children) {
             normalizedCache[idx] ??= normalize(tr.textContent);
-            tr.classList.toggle("hidden", !normalizedCache[idx].includes(filter));
+            let isHidden = !normalizedCache[idx].includes(filter);
+            tr.classList.toggle("hidden", isHidden);
+            if(isHidden && tr.classList.contains("focused")) {
+                tr.classList.remove("focused");
+                viewButton.classList.add("disabled");
+            }
             idx++;
         }
     };

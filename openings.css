@@ -100,7 +100,7 @@ table thead > tr, tr:nth-child(2n of :not(.hidden)) {
     --cell-color: var(--main-color);
 }
 table tbody tr.focused {
-    --cell-color: var(--accent-color);
+    --cell-color: var(--accent-color) !important;
     border-top: 3px solid var(--action-color-highlight);
     border-bottom: 3px solid var(--action-color-highlight);
 }
