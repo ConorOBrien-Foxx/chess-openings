@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Opening Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="openings.css">
+    <script src="./openings.js"></script>
+</head>
+<body>
+    <header>
+        Chess Opening Viewer
+    </header>
+    <main>
+        <article>
+            <label>Filter <input class="filter" placeholder="Type..."></label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ECO</th>
+                        <th>Name</th>
+                        <th>PGN</th>
+                    </tr>
+                </thead>
+                <tbody class="openings"></tbody>
+            </table>
+            <p class="status">Loading&hellip;</p>
+            <button disabled class="view-button floating-action-button"><img class="icon" src="./res/view.svg"></button>
+            <a class="hidden lichess-link" href="https://lichess.org/" target="_blank"></a>
+        </article>
+    </main>
+    <footer>
+        Made by <a href="https://conorobrien-foxx.github.io/" target="_blank">Conor O'Brien</a>
+    </footer>
+</body>
+</html>

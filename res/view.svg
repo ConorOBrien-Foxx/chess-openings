@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by yourtempo: https://github.com/yourtempo/tempo-quill-icons -->
+<!-- slight modifications -->
+<svg width="800px" height="800px" viewBox="4 3 25 25" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M28 27l-7.5-7.5"/>
+  <circle r="9" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1 0 0 1 14 13)"/>
+</svg>
