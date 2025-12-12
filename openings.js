@@ -120,7 +120,7 @@ Promise.all([
     const normalize = text => text
         .toLowerCase()
         .normalize("NFD") // splits accents apart from the base letters
-        .replace(/[^-'a-z]+/g, ""); // ignore whitespace and accents
+        .replace(/[^-'a-z0-9]+/g, ""); // ignore whitespace and accents
     
     const normalizedCache = [];
     const syncFilter = () => {
